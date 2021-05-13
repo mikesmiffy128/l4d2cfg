@@ -6,7 +6,6 @@ m4_dnl To make the main page, use `m4 -P index.html.in` in this directory.
 		<title>L4D2 Vote Cycler Generator</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="dragula.min.css">
 		<style>
 m4_include(dragula.min.css)m4_include(main.css)m4_dnl
 		</style>
@@ -52,14 +51,13 @@ m4_include(dragula.min.css)m4_include(main.css)m4_dnl
 		<p>
 			Copy-paste the above into an existing .cfg, or
 			<a href="javascript:void(0)" id="savelink" download="cycler.cfg">
-				save it
-			</a>
+				save it</a>
 			to a new file!
 		</p>
 		<p>Add e.g. <code>exec cycler</code> to your <code>autoexec.cfg</code>
 		and then use the console to bind keys to the
-		<code>cycler_callvote</code>, <code>cycler_next</code> and
-		<code>cycler_reset</code> commands.
+		<code>cycler_callvote</code>, <code>cycler_next</code>,
+		<code>cycler_prev</code> and <code>cycler_reset</code> commands.
 		<hr>
 		<footer>
 			Thanks to <a href="https://github.com/ImAciidz">Aciidz</a> for

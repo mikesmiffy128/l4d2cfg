@@ -9,14 +9,22 @@ var gencfg = _ => {
 	for (var i = 0; i < left.children.length; ++i) {
 		var id = left.children[i].attributes["data-id"].value - 0
 		var next = (i + 1) % left.children.length
-		cfgfile += "alias !"+i+' "alias ! !'+next+"; alias !v !v"+ next +
-				"; say Next vote: "+left.children[next].innerText+'"\n'
+		// modulo isn't really modulo, silly js
+		var prev = (i - 1 + left.children.length) % left.children.length
+		cfgfile += "alias !"+i+' "alias ! !'+next+"; alias !v !v"+next +
+				"; alias !p !p"+next+"; say Next vote: " +
+				left.children[next].innerText+'"\n'
+		cfgfile += "alias !p"+i+' "alias ! !'+prev+"; alias !v !v"+prev +
+				"; alias !p !p"+prev+"; say Next vote: " +
+				left.children[prev].innerText+'"\n'
 		cfgfile += "alias !v"+i+' "callvote ChangeMission L4D2C'+id+"; !"+i+'"\n'
 	}
-	cfgfile += "alias ! !0; alias !v !v0\n"
+	cfgfile += "alias ! !1; alias !p !p1; alias !v !v1\n"
 	cfgfile += "alias cycler_callvote !v\n"
 	cfgfile += "alias cycler_next !\n"
-	cfgfile += 'alias cycler_reset "alias ! !0; alias !v !v0"\n'
+	cfgfile += "alias cycler_prev !p\n"
+	cfgfile += 'alias cycler_reset "alias ! !1; alias !v !v1; alias !p !p1' +
+			'; say Cycler was reset"'
 	cfgfile = cfgfile.replaceAll("!", "__cycler")
 	out.textContent = cfgfile
 	savelink.href = "data:text/plain;base64,"+btoa(cfgfile) // lol this works :D
@@ -50,9 +58,8 @@ dragula([left, right], {
 }).on("drop", gencfg)
 
 var order_c5 = [2, 1, 0, 3, 4]
-var order_s5 = [4, 0, 2, 3, 1]
+var order_s5 = [2, 0, 4, 3, 1]
 var order_c13 = [4, 3, 2, 5, 6, 1, 11, 10, 7, 8, 9, 12, 0]
-
 var setorder = o => {
 	var toleft = []
 	while (right.children.length) {
@@ -72,7 +79,6 @@ var setorder = o => {
 	for (var c of toleft) {console.log(c);left.appendChild(c)}
 	gencfg()
 }
-
 document.getElementById("t-c5").onclick = _ => setorder(order_c5)
 document.getElementById("t-s5").onclick = _ => setorder(order_s5)
 document.getElementById("t-c13").onclick = _ => setorder(order_c13)
