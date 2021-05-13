@@ -1,0 +1,84 @@
+m4_dnl I'm using m4 macros to assemble a webpage because I'm a boomer.
+m4_dnl To make the main page, use `m4 -P index.html.in` in this directory.
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>L4D2 Vote Cycler Generator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="dragula.min.css">
+		<style>
+m4_include(dragula.min.css)m4_include(main.css)m4_dnl
+		</style>
+	</head>
+	<body>
+		<h1>L4D2 Vote Cycler Generator</h1>
+		<div id="templs">
+			Templates:<br>
+			<a id="t-c5" href="javascript:;">Main Campaigns Co-op</a>
+			|
+			<a id="t-s5" href="javascript:;">Mains Campaigns Solo</a>
+			|
+			<a id="t-c13" href="javascript:;">13 Campaigns Co-op</a>
+		</div>
+		<div id="sxs">
+			<div>
+				<h2>Included in run:</h2>
+				<div class="items" id="left">
+					<div data-id=2>Dark Carnival</div>
+					<div data-id=5>The Parish</div>
+					<div data-id=1>Dead Center</div>
+					<div data-id=4>Hard Rain</div>
+					<div data-id=3>Swamp Fever</div>
+				</div>
+			</div>
+			<div>
+				<h2>Excluded from run:</h2>
+				<div class="items" id="right">
+					<div data-id=6>The Passing</div>
+					<div data-id=7>The Sacrifice</div>
+					<div data-id=8>No Mercy</div>
+					<div data-id=9>Crash Course</div>
+					<div data-id=10>Death Toll</div>
+					<div data-id=11>Dead Air</div>
+					<div data-id=12>Blood Harvest</div>
+					<div data-id=13>Cold Stream</div>
+					<div data-id=14>The Last Stand</div>
+				</div>
+			</div>
+		</div>
+		<p id="explain">Drag the campaigns around to create your run order!</p>
+		<div id="outwrap"><div id="out"></div></div>
+		<p>
+			Copy-paste the above into an existing .cfg, or
+			<a href="javascript:void(0)" id="savelink" download="cycler.cfg">
+				save it
+			</a>
+			to a new file!
+		</p>
+		<p>Add e.g. <code>exec cycler</code> to your <code>autoexec.cfg</code>
+		and then use the console to bind keys to the
+		<code>cycler_callvote</code>, <code>cycler_next</code> and
+		<code>cycler_reset</code> commands.
+		<hr>
+		<footer>
+			Thanks to <a href="https://github.com/ImAciidz">Aciidz</a> for
+			coming up with this idea.<br>
+			This page uses code from the
+			<a href="https://https://github.com/bevacqua/dragula">Dragula</a>
+			project; please read its
+			<a href="https://raw.githubusercontent.com/bevacqua/dragula/master/license">
+				licence</a>!<br>
+			Unsure what this is about? Check out the
+			<a href="https://speedrun.com/l4d2">
+				Left 4 Dead 2 speedrun leaderboard
+			</a>
+			and
+			<a href="https://discord.gg/JAUCEJmm2H">
+				community Discord server</a>!
+		</footer>
+		<script>
+m4_include(dragula.min.js)m4_include(index.js)m4_dnl
+		</script>
+	</body>
+</html>
