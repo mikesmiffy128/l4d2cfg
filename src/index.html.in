@@ -63,7 +63,7 @@ m4_include(dragula.min.css)m4_include(main.css)m4_dnl
 			Thanks to <a href="https://github.com/ImAciidz">Aciidz</a> for
 			coming up with this idea.<br>
 			This page uses code from the
-			<a href="https://https://github.com/bevacqua/dragula">Dragula</a>
+			<a href="https://github.com/bevacqua/dragula">Dragula</a>
 			project; please read its
 			<a href="https://raw.githubusercontent.com/bevacqua/dragula/master/license">
 				licence</a>!<br>

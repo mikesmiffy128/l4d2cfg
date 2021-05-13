@@ -8,19 +8,21 @@
 .gu-mirror{position:fixed!important;margin:0!important;z-index:9999!important;opacity:.8}.gu-hide{display:none!important}.gu-unselectable{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important}.gu-transit{opacity:.2}html, body {
 	margin: 0; padding: 0;
 	font-family: sans-serif;
+	background: rgb(8, 16, 24);
+	color: white;
 }
-body * { text-align: center; }
+body { padding-bottom: 1rem; }
+body * { text-align: center; user-select: none; }
 h1, h2 { font-weight: 500; }
 h1 { padding-top: 4rem; margin-bottom: 1rem; }
 h2 { margin-bottom: 0ex; }
-a { color: blue !important; }
-#templs {
-	font-size: 12px;
-}
+a { color: rgb(160, 170, 240) !important; text-decoration: none; }
+#templs { font-size: 12px; }
 #sxs {
 	display: flex;
 	width: 800px;
 	margin: auto;
+	margin-bottom: 8px;
 	justify-content: space-evenly;
 }
 .items {
@@ -31,16 +33,19 @@ a { color: blue !important; }
 	list-style: none;
 	margin: 4px;
 	padding: 2px;
-	background: rgb(246, 246, 246);
+	background: rgb(32, 32, 32);
+	border: 1px solid black;
 	border-radius: 6px;
 	overflow: hidden;
 }
 .items div {
-	background: white;
+	background: lightgrey;
 	border: 1px solid black;
+	color: black;
 	border-radius: 6px;
 	margin: 4px;
 	padding: 10px;
+	font-weight: 600;
 }
 #explain { text-style: italic; }
 #outwrap {
@@ -62,11 +67,13 @@ a { color: blue !important; }
 	font-size: 12px;
 	text-align: left;
 	overflow: hidden scroll;
+	color: black;
+	background: white;
 }
 p { max-width: 780px; margin: auto; }
 hr { width: 800px; }
 footer {
-	color: grey;
+	color: lightgrey;
 	font-size: 12px;
 	margin-bottom: 8px;
 }
@@ -125,7 +132,7 @@ footer {
 			Thanks to <a href="https://github.com/ImAciidz">Aciidz</a> for
 			coming up with this idea.<br>
 			This page uses code from the
-			<a href="https://https://github.com/bevacqua/dragula">Dragula</a>
+			<a href="https://github.com/bevacqua/dragula">Dragula</a>
 			project; please read its
 			<a href="https://raw.githubusercontent.com/bevacqua/dragula/master/license">
 				licence</a>!<br>
